@@ -1,0 +1,48 @@
+// Strings.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+// The purpose of this section of code is to take a user's full name and count the number of vowels in the name and display it.
+
+int main()
+{
+	string fullName;
+	cout << "Please enter your full name: ";
+	getline(cin, fullName);
+	int vowelCount = 0;
+	for (int i = 0; i < fullName.length(); i++)
+	{
+		char currentChar = tolower(fullName[i]);
+		if (currentChar == 'a' || currentChar == 'e' || currentChar == 'i' || currentChar == 'o' || currentChar == 'u')
+		{
+			vowelCount++;
+		}
+	}
+	cout << "Your full name has " << vowelCount << " vowels." << endl;
+	
+
+
+	// The purpose of this section of code is to check if a string is a palindrome or not.
+	
+	string palindrome;
+	cout << "Please enter a string to check if it is a palindrome: ";
+	getline(cin, palindrome);
+	string reversedString = "";
+	for (int i = palindrome.length() - 1; i >= 0; i--)
+	{
+		reversedString += palindrome[i];
+	}
+	if (palindrome == reversedString)
+	{
+		cout << "The string is a palindrome." << endl;
+	}
+	else
+	{
+		cout << "The string is not a palindrome." << endl;
+	}
+
+
+}
